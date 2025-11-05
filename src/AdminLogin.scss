@@ -1,0 +1,157 @@
+// AdminLogin Component Styles - Lighter Design
+.admin-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 20px;
+}
+
+.admin-login-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 550px;
+}
+
+// Use contact form styling
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-tag {
+  margin-bottom: 15px;
+}
+
+.section-tag-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #f38a1e;
+  border-radius: 50%;
+}
+
+.section-tag-inner p {
+  margin: 0;
+  color: #6c757d;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.contact-title {
+  color: #074440;
+  font-size: 36px;
+  font-family: "Lora", serif;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.contact-form {
+  .form-grid {
+    display: grid;
+    gap: 25px;
+    margin-bottom: 25px;
+  }
+
+  .form-label {
+    display: block;
+
+    .label-text {
+      color: #6c757d;
+      font-size: 15px;
+      font-weight: 500;
+      margin: 0 0 10px 0;
+    }
+
+    // .form-input {
+    //   position: relative;
+
+    //   input {
+    //     width: 100%;
+    //     padding: 15px 20px;
+    //     border: 1px solid rgba(0, 0, 0, 0.2);
+    //     border-radius: 12px;
+    //     font-size: 16px;
+    //     background: rgba(255, 255, 255, 0.8);
+    //     color: #495057;
+    //     transition: all 0.3s ease;
+    //     font-family: "Inter", sans-serif;
+
+    //     &::placeholder {
+    //       color: rgba(108, 117, 125, 0.6);
+    //     }
+
+    //     &:focus {
+    //       outline: none;
+    //       border-color: #f38a1e;
+    //       background: rgba(255, 255, 255, 1);
+    //       box-shadow: 0 0 0 3px rgba(243, 138, 30, 0.1);
+    //     }
+    //   }
+    // }
+  }
+
+  .response-note {
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+
+    &.error {
+      background: rgba(220, 53, 69, 0.1);
+      border: 1px solid rgba(220, 53, 69, 0.3);
+      color: #dc3545;
+    }
+  }
+
+  // .form-button-wrapper {
+  //   text-align: center;
+
+  //   .submit-button {
+  //     background: linear-gradient(135deg, #074440 0%, #002a1c 100%);
+  //     color: white;
+  //     border: 2px solid #f38a1e;
+  //     padding: 15px 40px;
+  //     border-radius: 12px;
+  //     font-size: 16px;
+  //     font-weight: 600;
+  //     cursor: pointer;
+  //     transition: all 0.3s ease;
+  //     font-family: "Inter", sans-serif;
+  //     width: 100%;
+
+  //     &:hover:not(:disabled) {
+  //       background: linear-gradient(135deg, #002a1c 0%, #074440 100%);
+  //       transform: translateY(-2px);
+  //       box-shadow: 0 8px 25px rgba(243, 138, 30, 0.2);
+  //     }
+
+  //     &:disabled {
+  //       opacity: 0.6;
+  //       cursor: not-allowed;
+  //       transform: none;
+  //     }
+
+  //     p {
+  //       margin: 0;
+  //     }
+  //   }
+  // }
+}
