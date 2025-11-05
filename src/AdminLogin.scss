@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(135deg, #022f22, #067252);
   padding: 20px;
 }
 
@@ -17,6 +17,9 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 550px;
+  input{
+    color: black !important;
+  }
 }
 
 // Use contact form styling
