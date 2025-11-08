@@ -1,0 +1,500 @@
+// PricingForm.scss
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+// Variables
+$font: "Inter", "Inter Placeholder", sans-serif;
+$font_2: "Lora", serif;
+$nav_bg: #1f1f1f;
+$green_light: #074440;
+$green_dark: #002a1c;
+$bg-gradient: linear-gradient(180deg, $green_light 0%, $green_dark 100%);
+$bg-gradient2: linear-gradient(0deg, $green_light 0%, $green_dark 100%);
+$body_bg: #171717;
+$blue: #f38a1e;
+$p_color: #b8b8b8;
+
+.pricing-form {
+  box-sizing: border-box;
+  place-content: flex-start;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 0;
+  position: relative;
+  width: 100%;
+  background-color: $green_light;
+  font-family: $font;
+
+  .form-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    width: 100%;
+    padding: 60px;
+    margin: 0 auto;
+    align-items: center;
+    background-color: rgba(0, 42, 28, 0.3);
+    border-radius: 32px;
+    position: relative;
+    overflow: hidden;
+
+    .form-header {
+      width: 100%;
+      margin-bottom: 48px;
+      text-align: center;
+
+      .how-tag {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 16px;
+        padding: 6px 12px;
+        background: rgba($blue, 0.1);
+        border-radius: 20px;
+
+        .dot {
+          width: 8px;
+          height: 8px;
+          background-color: $blue;
+          border-radius: 50%;
+        }
+
+        p {
+          color: $blue;
+          font-size: 14px;
+          font-weight: 600;
+          margin: 0;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+        }
+      }
+
+      h2 {
+        color: #fff;
+        font-family: $font_2;
+        font-size: 48px;
+        font-weight: 500;
+        line-height: 1.2;
+        margin: 0;
+        letter-spacing: -0.5px;
+
+        @media (max-width: 768px) {
+          font-size: 36px;
+        }
+      }
+    }
+
+    .contact-content {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        width: 100%;
+        margin-bottom: 30px;
+
+        @media (max-width: 768px) {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+      }
+
+      .form-group {
+        margin-bottom: 24px;
+        width: 100%;
+
+        .form-label {
+          display: block;
+          margin-bottom: 16px;
+          width: 100%;
+
+          .label-text {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            display: block;
+            font-family: $font;
+          }
+
+          .form-input {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            select {
+              width: 100%;
+              padding: 16px 20px;
+              font-size: 16px;
+              font-family: $font;
+              cursor: pointer;
+              background: rgba(255, 255, 255, 0.05);
+              color: #fff;
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 12px;
+              outline: none;
+              transition: all 0.3s ease;
+              appearance: none;
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23b8b8b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+              background-repeat: no-repeat;
+              background-position: right 20px center;
+              background-size: 16px;
+              padding-right: 50px;
+              height: 56px;
+
+              &:hover {
+                border-color: rgba(255, 255, 255, 0.2);
+              }
+
+              &:focus {
+                border-color: $blue;
+                box-shadow: 0 0 0 2px rgba($blue, 0.2);
+              }
+
+              option {
+                background: $green_dark;
+                color: #fff;
+                padding: 10px;
+              }
+            }
+
+            .price-display {
+              position: absolute;
+              right: 20px;
+              top: 50%;
+              transform: translateY(-50%);
+              color: #fff;
+              font-weight: 600;
+              font-size: 16px;
+              pointer-events: none;
+              background: $blue;
+              padding: 4px 10px;
+              border-radius: 6px;
+              margin-left: 10px;
+            }
+          }
+        }
+
+        .radio-options {
+          margin-top: 16px;
+
+          .radio-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            cursor: pointer;
+
+            input[type="checkbox"] {
+              margin-right: 12px;
+              width: 20px;
+              height: 20px;
+              accent-color: $blue;
+              cursor: pointer;
+            }
+
+            .radio-label {
+              color: #fff;
+              font-size: 16px;
+              font-weight: 400;
+              display: flex;
+              align-items: center;
+              transition: all 0.2s ease;
+
+              &:hover {
+                color: darken(#fff, 10%);
+              }
+
+              .free-badge {
+                background: $blue;
+                color: #fff;
+                font-size: 12px;
+                font-weight: 600;
+                padding: 4px 10px;
+                border-radius: 4px;
+                margin-left: 10px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+              }
+
+              .price-hint {
+                color: $p_color;
+                margin-left: 6px;
+                font-size: 14px;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+
+        .total-price {
+          margin-top: 30px;
+          text-align: center;
+
+          h3 {
+            color: #fff;
+            font-size: 28px;
+            margin: 0 0 12px 0;
+            font-family: $font_2;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+
+            .highlight {
+              color: $blue;
+              font-weight: 600;
+              font-size: 32px;
+            }
+          }
+
+          .discount-note {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            margin: 12px 0 0 0;
+            font-style: italic;
+            line-height: 1.2;
+            margin: 0 0 20px;
+          }
+        }
+
+        .form-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+          width: 100%;
+          margin-bottom: 32px;
+
+          @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 20px;
+          }
+        }
+
+        .form-group {
+          margin-bottom: 24px;
+          width: 100%;
+
+          .form-label {
+            display: block;
+            margin-bottom: 8px;
+            width: 100%;
+
+            .label-text {
+              color: $p_color;
+              font-size: 16px;
+              line-height: 1.5;
+              margin-bottom: 8px;
+              display: block;
+              font-family: $font;
+            }
+
+            .form-input {
+              position: relative;
+              width: 100%;
+              display: flex;
+              align-items: center;
+
+              select {
+                width: 100%;
+                padding: 12px 16px;
+                font-size: 16px;
+                font-family: $font;
+                background: rgba($green_dark, 0.4);
+                color: #fff;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
+                outline: none;
+                transition: all 0.3s ease;
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23b8b8b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: right 16px center;
+                background-size: 16px;
+                padding-right: 40px;
+                height: 48px;
+                margin-right: 10px;
+
+                &:focus {
+                  border-color: $blue;
+                  box-shadow: 0 0 0 2px rgba($blue, 0.2);
+                }
+
+                option {
+                  background: $green_dark;
+                  color: #fff;
+                }
+              }
+
+              .price-display {
+                color: #fff;
+                font-weight: 500;
+                white-space: nowrap;
+              }
+
+              padding: 10px;
+            }
+          }
+
+          .price-display {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            font-weight: 500;
+            pointer-events: none;
+            padding-left: 16px;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            margin-left: 8px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+
+      .radio-options {
+        margin-top: 8px;
+
+        .radio-option {
+          display: flex;
+          align-items: center;
+          margin-bottom: 8px;
+          cursor: pointer;
+
+          .form-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid $blue;
+            border-radius: 4px;
+            margin-right: 12px;
+            position: relative;
+            cursor: pointer;
+            flex-shrink: 0;
+
+            &:checked {
+              background-color: $blue;
+
+              &::after {
+                content: '✓';
+                position: absolute;
+                color: white;
+                font-size: 12px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                line-height: 1;
+              }
+            }
+          }
+
+          .radio-label {
+            color: #fff;
+            font-size: 16px;
+            line-height: 1.5;
+
+            .free-badge {
+              background: $blue;
+              color: white;
+              font-size: 12px;
+              padding: 2px 8px;
+              border-radius: 4px;
+              margin-left: 8px;
+              font-weight: 600;
+              text-transform: uppercase;
+            }
+
+            .price-hint {
+              color: $p_color;
+              font-size: 14px;
+              margin-left: 4px;
+            }
+          }
+        }
+      }
+
+      .total-price {
+        border-radius: 12px;
+        text-align: center;
+
+        h3 {
+          color: #fff;
+          font-size: 24px;
+          margin: 0 0 8px;
+          font-weight: 600;
+
+          .highlight {
+            color: $blue;
+          }
+        }
+
+        .discount-note {
+          color: $blue;
+          font-size: 14px;
+          margin: 8px 0 0;
+          font-style: italic;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 40px 0;
+
+    .form-container {
+      .form-header {
+        h2 {
+          font-size: 36px;
+        }
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .form-group {
+        .total-price {
+          h3 {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 32px 0;
+
+    .form-container {
+      .form-header {
+        h2 {
+          font-size: 28px;
+        }
+      }
+
+      .form-group {
+        .total-price {
+          padding: 16px;
+
+          h3 {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}

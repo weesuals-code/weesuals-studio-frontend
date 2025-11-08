@@ -15,6 +15,7 @@ import Footer from "./compontents/Footer";
 import AdminLogin from "./compontents/AdminLogin";
 import AdminDashboard from "./compontents/AdminDashboard";
 import AdminUsers from "./compontents/AdminUsers";
+import PricingForm from "./compontents/PricingForm";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -68,6 +69,7 @@ function App() {
               <>
                 <Navbar />
                 <Home />
+                <PricingForm/>
                 <Work />
                 <Services />
                 <Why />
