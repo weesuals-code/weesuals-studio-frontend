@@ -3,36 +3,36 @@ import React, { useEffect, useRef, useState } from "react";
 const processSteps = [
   {
     number: "1",
-    title: "Creating the strategy",
-    description: "We chat about your goals, audience, and style.",
+    title: "Înțelegem brandul tău",
+    description: "Stabilim obiectivele, publicul și stilul potrivit pentru tine.",
   },
   {
     number: "2",
-    title: "Scripting the content",
-    description: "You send over footage, assets, and references.",
+    title: "Plan și idei de conținut",
+    description: "Propunem concepte, scenarii și direcția pentru fiecare clip.",
   },
   {
     number: "3",
-    title: "Filming the content",
-    description: "I craft a clean, compelling cut aligned with your vision.",
+    title: "Filmăm conținutul",
+    description: "Venim la locație, organizăm totul și tragem cadrele de care avem nevoie.",
   },
   {
     number: "4",
     review: true,
-    title: "Verification",
-    description: "You provide feedback and I make refinements.",
+    title: "Edităm și optimizăm",
+    description: "Montaj, subtitrări, sunet, adaptări pentru fiecare platformă.",
   },
   {
     number: "5",
-    title: "Editing and position",
+    title: "Programăm și postăm",
     description:
-      "Final files are shared in your preferred format, ready to post.",
+      "Ne ocupăm să apară constant, la orele corecte, unde trebuie.",
   },
   {
     number: "6",
-    title: "Promoting",
+    title: "Promovăm și scalăm",
     description:
-      "Final files are shared in your preferred format, ready to post.",
+      "Rulăm reclame plătite, analizăm și creștem rezultatele clip cu clip.",
   },
 ];
 
@@ -154,9 +154,9 @@ const How = () => {
         <div className="how-header">
           <div className="how-tag">
             <div className="how-dot"></div>
-            <p>The process</p>
+            <p>Procesul</p>
           </div>
-          <h2 className="title">How we'll work together</h2>
+          <h2 className="title">Cum vom lucra împreună?</h2>
         </div>
 
         <div

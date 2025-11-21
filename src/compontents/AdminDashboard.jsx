@@ -127,18 +127,23 @@ function AdminDashboard({ admin, onLogout }) {
       <div className="admin-header">
         <div className="admin-header-content">
           <div className="admin-info">
-            <h1>Admin Dashboard</h1>
-            <p>Welcome, {admin.name}</p>
+            <h1>Panou de Administrare</h1>
+            <p>Autentificat ca: <strong>{admin.email}</strong></p>
           </div>
-          <div className="admin-actions">
+          <div className="admin-actions"><button
+              className="admin-button secondary"
+              onClick={() => navigate("/admin/verified-users")}
+            >
+              Utilizatori Verificati
+            </button>
             <button
               className="admin-button secondary"
               onClick={() => navigate("/admin/users")}
             >
-              Manage Users
+              Gestionează Utilizatori
             </button>
             <button className="admin-button danger" onClick={onLogout}>
-              Logout
+              Deconectare
             </button>
           </div>
         </div>

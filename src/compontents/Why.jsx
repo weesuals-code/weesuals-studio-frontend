@@ -15,12 +15,12 @@ function Why() {
                   <div className="DIV-3">
                     <div className="how-tag">
                       <div className="how-dot"></div>
-                      <p>Why me?</p>
+                      <p>De ce noi?</p>
                     </div>
                   </div>
                 </div>
                 <div className="DIV-6">
-                  <h2 className="H2-0">More than just editing</h2>
+                  <h2 className="H2-0">Lucrăm cot la cot cu brandurile, de la concept la publicare.</h2>
                 </div>
               </div>
               <div className="DIV-7">
@@ -49,11 +49,11 @@ function Why() {
                   <div className="DIV-15">
                     <div className="DIV-16">
                       <div className="DIV-17">
-                        <h1 className="H1-0">11.000.000</h1>
+                        <h1 className="H1-0">Plan complet</h1>
                       </div>
                     </div>
                     <div className="DIV-19">
-                      <p className="P-2">Views</p>
+                      <p className="P-2">Scriptare, filmare, editare, postare, ads</p>
                     </div>
                   </div>
                 </div>
@@ -98,15 +98,15 @@ function Why() {
                   </div>
                   <div>
                     <div className="DIV-21">
-                      <h3 className="H3-0">250+</h3>
+                      <h3 className="H3-0">2520+</h3>
                     </div>
                     <div className="DIV-27">
-                      <p className="P-3">videos for 1 client in</p>
+                      <p className="P-3">Video-uri pentru un singur client într-un an</p>
                     </div>
 
-                    <div className="DIV-21">
+                    {/* <div className="DIV-21">
                       <h3 className="H3-0">1 Year</h3>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <div className="DIV-28">
@@ -146,7 +146,7 @@ function Why() {
                   </div>
                   <div className="DIV-36">
                     <div className="DIV-37">
-                      <p className="P-4">Worked with 20+ Global Clients</p>
+                      <p className="P-4">Suport real și comunicare zilnică</p>
                     </div>
                     <div className="DIV-38">
                       <div className="DIV-39">

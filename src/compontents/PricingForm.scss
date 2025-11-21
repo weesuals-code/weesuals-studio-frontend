@@ -39,6 +39,60 @@ $p_color: #b8b8b8;
     border-radius: 32px;
     position: relative;
     overflow: hidden;
+    
+    .find-price-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
+      width: 100%;
+    }
+
+    .find-price-btn {
+      background: $blue;
+      color: white;
+      border: none;
+      padding: 16px 48px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 200px;
+      text-align: center;
+      
+      &:hover:not(:disabled) {
+        background: darken($blue, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+      
+      &:active:not(:disabled) {
+        transform: translateY(0);
+      }
+      
+      &:disabled {
+        background: #cccccc;
+        cursor: not-allowed;
+        opacity: 0.7;
+      }
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      max-width: 300px;
+      margin: 20px auto 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      
+      &:hover {
+        background: darken($blue, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+      
+      &:active {
+        transform: translateY(0);
+      }
+    }
 
     .form-header {
       width: 100%;
@@ -52,7 +106,7 @@ $p_color: #b8b8b8;
         gap: 10px;
         margin-bottom: 16px;
         padding: 6px 12px;
-        background: rgba($blue, 0.1);
+        background: rgba(255, 255, 255, 0.1);
         border-radius: 20px;
 
         .dot {
@@ -63,11 +117,11 @@ $p_color: #b8b8b8;
         }
 
         p {
-          color: $blue;
+          color: white;
           font-size: 14px;
           font-weight: 600;
           margin: 0;
-          text-transform: uppercase;
+          // text-transform: uppercase;
           letter-spacing: 1.5px;
         }
       }
@@ -450,29 +504,512 @@ $p_color: #b8b8b8;
       }
     }
   }
+  
+    /* Modal Overlay */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+  }
 
-  @media (max-width: 768px) {
-    padding: 40px 0;
+  /* Modal Content */
+  .modal-content {
+    background: $green_dark;
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    font-family: $font;
+  }
 
-    .form-container {
-      .form-header {
-        h2 {
-          font-size: 36px;
+  .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 5px;
+    line-height: 1;
+    
+    &:hover {
+      color: white;
+    }
+  }
+
+  /* Verification Step */
+  .verification-step {
+    text-align: center;
+    
+    h2 {
+      font-family: $font_2;
+      font-size: 28px;
+      margin-bottom: 16px;
+      color: white;
+    }
+    
+    .verification-subtitle {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+  }
+
+  /* Form Styles */
+  .verification-form {
+    .form-group {
+      margin-bottom: 25px;
+      text-align: left;
+      
+      .form-label {
+        display: block;
+        margin-bottom: 10px;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 15px;
+        font-weight: 500;
+      }
+      
+      .form-control {
+        width: 100%;
+        padding: 14px 18px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        color: white;
+        font-size: 15px;
+        transition: all 0.3s;
+        
+        &:focus {
+          outline: none;
+          border-color: $blue;
+          box-shadow: 0 0 0 2px rgba($blue, 0.2);
+        }
+        
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.4);
         }
       }
-
-      .form-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .form-group {
-        .total-price {
-          h3 {
-            font-size: 20px;
+      
+      .phone-input {
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        // overflow: hidden;
+        
+        .phone-prefix {
+          padding: 0 15px;
+          background: rgba(255, 255, 255, 0.05);
+          display: flex;
+          align-items: center;
+          color: rgba(255, 255, 255, 0.8);
+          font-weight: 500;
+        }
+        
+        input {
+          flex: 1;
+          background: transparent;
+          border: none;
+          padding: 14px 15px 14px 0;
+          color: white;
+          font-size: 15px;
+          
+          &:focus {
+            outline: none;
           }
         }
       }
+      
+      /* OTP Input Container */
+      .otp-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 5px;
+        
+        .otp-input {
+          flex: 1;
+          height: 60px;
+          text-align: center;
+          font-size: 24px;
+          font-weight: 600;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 10px;
+          color: white;
+          transition: all 0.3s;
+          
+          &:focus {
+            outline: none;
+            border-color: $blue;
+            box-shadow: 0 0 0 2px rgba($blue, 0.2);
+          }
+          
+          &::placeholder {
+            color: rgba(255, 255, 255, 0.2);
+          }
+        }
+      }
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      width: 100%;
+      margin-top: 10px;
+      
+      &-primary {
+        background: $blue;
+        color: white;
+        
+        &:hover:not(:disabled) {
+          background: darken($blue, 10%);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 15px rgba($blue, 0.3);
+        }
+        
+        &:disabled {
+          background: #555;
+          cursor: not-allowed;
+          opacity: 0.7;
+        }
+      }
+      
+      &-link {
+        background: none;
+        color: rgba(255, 255, 255, 0.7);
+        padding: 10px 0;
+        margin-top: 15px;
+        
+        &:hover {
+          color: white;
+          background: none;
+          transform: none;
+          box-shadow: none;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  /* Success Message */
+  .success-message {
+    padding: 20px 0;
+    text-align: center;
+    
+    .price-display {
+      margin: 25px 0;
+      
+      .price {
+        display: block;
+        font-size: 48px;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 5px;
+        line-height: 1.2;
+      }
+      
+      .price-note {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+    
+    p {
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 30px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    
+    .success-actions {
+      margin-top: 30px;
+      
+      .btn {
+        &-primary {
+          background: $blue;
+          color: white;
+          border: none;
+          padding: 14px 32px;
+          font-size: 16px;
+          font-weight: 600;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          width: auto;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 180px;
+          
+          &:hover {
+            background: darken($blue, 10%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba($blue, 0.3);
+          }
+          
+          &:active {
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+
+  /* Error Message */
+  .error-message {
+    color: #ff6b6b;
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: left;
+    font-weight: 500;
+  }
+
+// Email Modal Styles
+  .email-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.3s ease-out;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .email-modal {
+    position: relative;
+    background: rgba(30, 42, 47, 0.95);
+    border-radius: 16px;
+    padding: 2.5rem;
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    h2 {
+      color: white;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      font-family: $font_2;
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.5px;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      font-family: $font;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      padding: 1rem 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      color: white;
+      font-family: $font;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      height: 56px;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $blue;
+        box-shadow: 0 0 0 2px rgba($blue, 0.2);
+      }
+    }
+
+    .modal-buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      margin-top: 1.5rem;
+
+      button {
+        padding: 0.8rem 2rem;
+        border-radius: 8px;
+        font-family: $font;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+
+        &.cancel-btn {
+          background: rgba(255, 255, 255, 0.1);
+          color: white;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          
+          &:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+          }
+          
+          &:active {
+            transform: translateY(0);
+          }
+        }
+        
+        &.submit-btn {
+          background: $blue;
+          color: white;
+          border: none;
+          
+          &:hover {
+            background: darken($blue, 10%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          }
+          
+          &:active {
+            transform: translateY(0);
+          }
+          
+          &:disabled {
+            background: lighten($blue, 15%);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+
+  .close-button {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+
+    &:hover {
+      color: white;
+      background: rgba(255, 255, 255, 0.2);
+      transform: rotate(90deg);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .success, .error {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: $font;
+  }
+
+  .success {
+    background: rgba(46, 204, 113, 0.15);
+    color: #2ecc71;
+    border: 1px solid rgba(46, 204, 113, 0.2);
+  }
+
+  .error {
+    background: rgba(231, 76, 60, 0.15);
+    color: #e74c3c;
+    border: 1px solid rgba(231, 76, 60, 0.2);
+  }
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    .email-modal {
+      padding: 2rem 1.5rem;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 1rem;
+      
+      h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+      }
+      
+      .modal-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+        
+        button {
+          width: 100%;
+        }
+      }
+    }
+    
+    .close-button {
+      top: 1rem;
+      right: 1rem;
     }
   }
 

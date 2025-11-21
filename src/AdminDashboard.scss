@@ -1,4 +1,13 @@
 // AdminDashboard Component Styles - Dark Theme with Transparent Cards
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@400;500;600&display=swap');
+
+$primary-color: #f38a1e;
+$secondary-color: #074440;
+$background-color: #002a1c;
+$text-color: #ffffff;
+$border-color: rgba(255, 255, 255, 0.1);
+$card-bg: rgba(255, 255, 255, 0.05);
+$hover-bg: rgba(255, 255, 255, 0.08);
 .admin-dashboard {
   min-height: 100vh;
   background: linear-gradient(180deg, #074440 0%, #002a1c 100%);
@@ -34,6 +43,200 @@
   margin: 5px 0 0 0;
   color: #b8b8b8;
   font-size: 16px;
+}
+
+/* Admin Tabs */
+.admin-tabs {
+  display: flex;
+  gap: 10px;
+  padding: 0 20px;
+  margin: 20px 0;
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 5px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: #b8b8b8;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px 6px 0 0;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow: hidden;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $primary-color;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover {
+    background: $hover-bg;
+    color: white;
+  }
+  
+  &.active {
+    color: white;
+    background: $hover-bg;
+    
+    &::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+}
+
+/* Table Styles */
+.table-container {
+  background: $card-bg;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 0 20px 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid $border-color;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+  
+  th, td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid $border-color;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  th {
+    background: rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #b8b8b8;
+  }
+  
+  tr:last-child td {
+    border-bottom: none;
+  }
+  
+  tr:hover {
+    background: $hover-bg;
+  }
+  
+  .message-cell {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .delete-btn {
+    background: rgba(220, 53, 69, 0.1);
+    color: #ff6b7a;
+    border: 1px solid rgba(220, 53, 69, 0.3);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    
+    &:hover {
+      background: rgba(220, 53, 69, 0.2);
+      transform: translateY(-1px);
+    }
+  }
+}
+
+/* Search Container */
+.search-container {
+  padding: 0 20px;
+  margin: 20px 0;
+  
+  input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    
+    &::placeholder {
+      color: #666;
+    }
+    
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 2px rgba($primary-color, 0.1);
+    }
+  }
+}
+
+/* Loading and Empty States */
+.loading, .no-data {
+  text-align: center;
+  padding: 40px 20px;
+  color: #b8b8b8;
+  font-size: 15px;
+  background: $card-bg;
+  margin: 0 20px 30px;
+  border-radius: 12px;
+  border: 1px solid $border-color;
+}
+
+/* Section Header */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 0;
+  
+  h2 {
+    margin: 0;
+    font-size: 20px;
+    color: white;
+    font-family: 'Lora', serif;
+    font-weight: 400;
+  }
+  
+  button {
+    background: none;
+    border: none;
+    color: #b8b8b8;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+    
+    &:hover {
+      color: $primary-color;
+    }
+  }
 }
 
 .admin-actions {
@@ -91,7 +294,7 @@
 }
 
 .admin-content {
-  max-width: 1200px;
+  // max-width: 1200px;
   margin: 0 auto;
   padding: 30px 20px;
 }

@@ -12,24 +12,24 @@ function Home() {
   return (
     <section className="section" id="home">
       <div className="left">
-        <span className="spots">
-          <div className="spot"></div>3 Spots Available
+        <span className="how-tag">
+          <div className="how-dot"></div>Suntem aici pentru brandul tău
         </span>
         <h1 className="title">
-          Marketing Some <br />
-          thing yes
+          Partenerul tău creativ
         </h1>
-        <p className="desc">Bette than u marketing yes</p>
+        <p className="desc">Tot conținutul, toată strategia și toate reclamele, într-un   singur loc. 
+</p>
         <div className="button-wrapper">
           <button className="button main">
             <a href="/#sad">
-              CTA <FaRegArrowAltCircleRight />
+              Hai să lucrăm împreună <FaRegArrowAltCircleRight />
             </a>
           </button>
         </div>
         <div className="socials">
           <img src={require("../assets/img/instagram.webp")} alt="" />
-          <img src={require("../assets/img/yt.png")} alt="" />
+          <img src={require("../assets/img/fb.png")} alt="" />
           <img src={require("../assets/img/tt.png")} alt="" />
         </div>
         <div className="over">
@@ -96,7 +96,7 @@ function Home() {
               width="5.0887500000000045px"
             ></path>
           </svg>
-          <p>Over 200+ Five Star Reviews</p>
+          <p>Colaborăm cu 20+ branduri</p>
         </div>
       </div>
       <div className="right">

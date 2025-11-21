@@ -15,7 +15,9 @@ import Footer from "./compontents/Footer";
 import AdminLogin from "./compontents/AdminLogin";
 import AdminDashboard from "./compontents/AdminDashboard";
 import AdminUsers from "./compontents/AdminUsers";
+import VerifiedUsers from "./compontents/VerifiedUsers";
 import PricingForm from "./compontents/PricingForm";
+import PriceOffer from "./pages/PriceOffer";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -202,6 +204,59 @@ function App() {
                 <Navigate to="/admin/login" replace />
               )
             }
+          />
+
+          <Route
+            path="/admin/verified-users"
+            element={
+              isLoading ? (
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  height: '100vh',
+                  background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
+                  color: '#074440',
+                  fontSize: '18px',
+                  fontFamily: 'Inter, sans-serif'
+                }}>
+                  <div style={{ textAlign: 'center' }}>
+                    <div style={{
+                      width: '40px',
+                      height: '40px',
+                      border: '4px solid #e9ecef',
+                      borderTop: '4px solid #f38a1e',
+                      borderRadius: '50%',
+                      animation: 'spin 1s linear infinite',
+                      margin: '0 auto 15px'
+                    }}></div>
+                    <div>Loading...</div>
+                  </div>
+                  <style>{`
+                    @keyframes spin {
+                      0% { transform: rotate(0deg); }
+                      100% { transform: rotate(360deg); }
+                    }
+                  `}</style>
+                </div>
+              ) : isAuthenticated ? (
+                <VerifiedUsers admin={admin} onLogout={handleLogout} />
+              ) : (
+                <Navigate to="/admin/login" replace />
+              )
+            }
+          />
+          
+          {/* Price Offer Route */}
+          <Route 
+            path="/price-offer/:token" 
+            element={
+              <>
+                <Navbar />
+                <PriceOffer />
+                <Footer />
+              </>
+            } 
           />
 
           {/* Catch all route - redirect to home */}

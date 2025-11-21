@@ -1,0 +1,194 @@
+@import '../compontents/PricingForm.scss';
+
+.price-offer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #074440 0%, #002a1c 100%);
+  color: white;
+  font-family: $font;
+}
+
+.price-offer-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 700px;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  
+  h1 {
+    font-family: $font_2;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    text-align: center;
+  }
+  
+  .offer-valid {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 2.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+.price-details {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 0;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 1.1rem;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    &.highlight {
+      background: rgba($blue, 0.1);
+      color: lighten($blue, 10%);
+      font-weight: 500;
+    }
+    
+    &.total {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: white;
+      background: rgba($blue, 0.15);
+    }
+  }
+  
+  .divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0.5rem 1.5rem;
+  }
+}
+
+.cta-section {
+  text-align: center;
+  margin: 2.5rem 0;
+  
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .contact-button {
+    background: $blue;
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    &:hover {
+      background: darken($blue, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba($blue, 0.3);
+    }
+  }
+}
+
+.disclaimer {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+  
+  p {
+    margin: 0.5rem 0;
+  }
+}
+
+// Loading and Error States
+.price-offer-loading,
+.price-offer-error {
+  text-align: center;
+  padding: 3rem;
+  
+  h2 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-family: $font_2;
+  }
+  
+  p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+  
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    border-top-color: $blue;
+    margin: 0 auto 1.5rem;
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  .back-button {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .price-offer-card {
+    padding: 30px 20px;
+    
+    h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  .price-details .price-row {
+    padding: 1rem;
+    font-size: 1rem;
+    
+    &.total {
+      font-size: 1.2rem;
+    }
+  }
+  
+  .cta-section .contact-button {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+}

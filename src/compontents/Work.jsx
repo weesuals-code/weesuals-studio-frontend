@@ -78,15 +78,21 @@ const TikTokVideo = ({ videoId }) => {
 };
 
 function Work() {
-  const thumbnailSrc =
-    "https://framerusercontent.com/images/3W8VcleAdJoA8i0BTj7JInHKuE.png?width=2880&height=1620";
-  const thumbnailImages = Array.from({ length: 6 }, () => thumbnailSrc);
+ 
+  const thumbnailImages = [
+    require("../assets/img/UncleVic feed.webp"),
+    require("../assets/img/UncleVic feed (1).webp"),
+    require("../assets/img/Postari Feed Gavas (1).webp"),
+    require("../assets/img/Post 2.webp"),
+    require("../assets/img/GAVAS - FEED.webp"),
+    require("../assets/img/bere a la cluj.webp"),
+  ];
 
   const aboutStats = [
-    { value: "20+", label: "Active clients" },
-    { value: "30M+", label: "Views generated" },
-    { value: "200+", label: "Monthly videos posted" },
-    { value: "000", label: "Something cool" },
+    { value: "20+", label: "Clienți" },
+    { value: "30M+", label: "Vizualizări generate" },
+    { value: "200+", label: "Videoclipuri produse lunar" },
+    { value: "300%+", label: "Creștere medie în engagement" },
   ];
   const aboutImages = {
     primary:
@@ -111,6 +117,10 @@ function Work() {
       src: "https://framerusercontent.com/images/XYhwhxXuEi3N5tgsUyxCU8Rmd6g.png?width=320&height=320",
       alt: "Notion logo",
     },
+    {
+      src:"https://www.svgrepo.com/svg/515420/capcut?",
+      alt:"Sad"
+    }
   ];
 
   return (
@@ -128,12 +138,12 @@ function Work() {
             alt="Creator working at desk"
           />
           <div className="about-header">
-            <div className="about-tag">
-              <div className="about-dot"></div>
-              <p>Hey, just an intro</p>
+            <div className="how-tag">
+              <div className="how-dot"></div>
+              <p>Pe scurt despre noi</p>
             </div>
-            <h2 className="about-title">Marketing good yes yes results</h2>
-            <p className="desc">Marketing good yes yes results</p>
+            <h2 className="about-title">Creăm conținut care livrează</h2>
+            <p className="desc">Strategie, producție și rezultate reale pentru branduri care vor să crească.</p>
           </div>
           <div className="about-content">
             <div className="about-left">
@@ -163,10 +173,10 @@ function Work() {
             </div>
           </div>
         </div>
-        <span className="spots">
-          <div className="spot"></div>Work
+        <span className="how-tag">
+          <div className="how-dot"></div>Portofoliu
         </span>
-        <h1 className="title">ShortForm showcase</h1>
+        <h1 className="title">Videouri pentru Social Media</h1>
         <div className="videos">
           {Array.from({ length: 5 }, (_, i) => i + 10).map((i) => (
             <video
@@ -180,19 +190,22 @@ function Work() {
             ></video>
           ))}
         </div>
-        <span className="spots">
-          <div className="spot"></div>Work
+        <span className="how-tag" id="work">
+          <div className="how-dot"></div>Portofoliu
         </span>
-        <h1 className="title">Thumbnail designs</h1>
+        <h1 className="title">Designuri pentru Social Media</h1>
         <div className="thumbnails-marquee">
           <div className="thumbnails-gradient thumbnails-gradient-left"></div>
           <div className="thumbnails-gradient thumbnails-gradient-right"></div>
           <div className="thumbnails-marquee-inner">
-            {thumbnailImages.concat(thumbnailImages).map((src, index) => (
+            {thumbnailImages.map((src, index) => (
               <div className="thumbnail-card" key={`thumb-${index}`}>
                 <img src={src} alt="youtube thumbnail" />
               </div>
             ))}
+            {/* <img src={
+    require("../assets/img/UncleVic feed.png")
+            } alt="" /> */}
           </div>
         </div>
       </section>

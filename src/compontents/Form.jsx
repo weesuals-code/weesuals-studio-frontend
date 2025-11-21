@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaEnvelope } from "react-icons/fa";
+import { FaEnvelope, FaPhone } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
 function Form() {
@@ -100,15 +100,14 @@ function Form() {
               <p>Contact</p>
             </div>
           </div>
-          <h2 className="contact-title">One cut at a time</h2>
+          <h2 className="contact-title">Scrie-ne câteva detalii și revenim rapid.</h2>
         </div>
         <div className="contact-grid">
           <div className="left-wrapper">
             <div className="heading-supporting-text">
-              <h3 className="custom-quote-title">Need a custom quote?</h3>
+              <h3 className="custom-quote-title">Ai nevoie de o ofertă personalizată?</h3>
               <p className="custom-quote-description">
-                Don’t let your ideas sit idle—slide into our inbox and let’s
-                make magic!
+                Suntem aici să te ajutăm, oricând.
               </p>
             </div>
             <div className="email-link-wrapper">
@@ -121,32 +120,42 @@ function Form() {
                 <FaEnvelope />
                 <p>weesuals@gmail.com</p>
               </a>
+            </div><div className="email-link-wrapper">
+              <a
+                href="tel:+40741791013"
+                target="_blank"
+                rel="noopener"
+                className="email-link dark"
+              >
+                <FaPhone />
+                <p>+40 741 791 013</p>
+              </a>
             </div>
           </div>
           <div className="form-wrapper">
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-grid">
                 <label className="form-label">
-                  <p className="label-text">Name</p>
+                  <p className="label-text">Nume</p>
                   <div className="form-input">
                     <input
                       type="text"
                       required
                       name="name"
-                      placeholder="Muzamal Hussain"
+                      placeholder="Dragutu Matei"
                       value={formData.name}
                       onChange={handleInputChange}
                     />
                   </div>
                 </label>
                 <label className="form-label">
-                  <p className="label-text">Email Address</p>
+                  <p className="label-text">Adresă de email</p>
                   <div className="form-input">
                     <input
                       type="email"
                       required
                       name="email"
-                      placeholder="Testing@gmail.com"
+                      placeholder="matei.dragutu@gmail.com"
                       value={formData.email}
                       onChange={handleInputChange}
                     />
@@ -154,27 +163,27 @@ function Form() {
                 </label>
               </div>
               <label className="radio-group">
-                <p className="label-text">What Service do you want</p>
+                <p className="label-text">Ce servicii te interesează?</p>
                 <div className="radio-options">
                   <label className="radio-option">
                     <input
                       type="radio"
                       name="service"
-                      value="Short-Form Editing"
-                      checked={formData.service === "Short-Form Editing"}
+                      value="Conținut video Social Media"
+                      checked={formData.service === "Conținut video Social Media"}
                       onChange={handleInputChange}
                     />
-                    <p>Short-Form Editing</p>
+                    <p>Conținut video Social Media</p>
                   </label>
                   <label className="radio-option">
                     <input
                       type="radio"
                       name="service"
-                      value="Long-Form Editing"
-                      checked={formData.service === "Long-Form Editing"}
+                      value="Campanii plătite Meta/TikTok"
+                      checked={formData.service === "Campanii plătite Meta/TikTok"}
                       onChange={handleInputChange}
                     />
-                    <p>Long-Form Editing</p>
+                    <p>Campanii plătite Meta/TikTok</p>
                   </label>
                   <label className="radio-option">
                     <input
@@ -190,66 +199,75 @@ function Form() {
                     <input
                       type="radio"
                       name="service"
-                      value="Thumbnail Design"
-                      checked={formData.service === "Thumbnail Design"}
+                      value="Website"
+                      checked={formData.service === "Website"}
                       onChange={handleInputChange}
                     />
-                    <p>Thumbnail Design</p>
+                    <p>Website</p>
                   </label>
                   <label className="radio-option">
                     <input
                       type="radio"
                       name="service"
-                      value="Other"
-                      checked={formData.service === "Other"}
+                      value="Design grafic"
+                      checked={formData.service === "Design grafic"}
                       onChange={handleInputChange}
                     />
-                    <p>Other</p>
+                    <p>Design grafic</p>
+                  </label> <label className="radio-option">
+                    <input
+                      type="radio"
+                      name="service"
+                      value="Altceva"
+                      checked={formData.service === "Altceva"}
+                      onChange={handleInputChange}
+                    />
+                    <p>Altceva</p>
                   </label>
                 </div>
               </label>
               <label className="radio-group">
-                <p className="label-text">What's your budget</p>
+                <p className="label-text">Buget estimat</p>
                 <div className="radio-options">
                   <label className="radio-option">
                     <input
                       type="radio"
                       name="budget"
-                      value="Under $500"
-                      checked={formData.budget === "Under $500"}
+                      value="Sub 500€"
+                      checked={formData.budget === "Sub 500€"}
                       onChange={handleInputChange}
                     />
-                    <p>Under $500</p>
+                    <p>Sub 500€</p>
                   </label>
                   <label className="radio-option">
                     <input
                       type="radio"
                       name="budget"
-                      value="$500 - $1k"
-                      checked={formData.budget === "$500 - $1k"}
+                      value="500€ – 1.000€"
+                      checked={formData.budget === "500€ – 1.000€"}
                       onChange={handleInputChange}
                     />
-                    <p>$500 - $1k</p>
+                    <p>500€ – 1.000€</p>
                   </label>
                   <label className="radio-option">
                     <input
                       type="radio"
                       name="budget"
-                      value="$1k - $5k"
-                      checked={formData.budget === "$1k - $5k"}
+                      value=">1000€"
+                      checked={formData.budget === ">1000€"}
                       onChange={handleInputChange}
                     />
-                    <p>$1k - $5k</p>
+                    <p>{'>1000€'}</p>
                   </label>
                 </div>
               </label>
               <label className="form-label long">
-                <p className="label-text">Share Exactly what you want</p>
+                <p className="label-text">Spune-ne exact ce ai nevoie</p>
                 <div className="form-input">
                   <textarea
                     required
                     name="description"
-                    placeholder="Please provide a detailed description of your needs"
+                    placeholder="8 videoclipuri pe lună + postare + ads"
                     value={formData.description}
                     onChange={handleInputChange}
                   ></textarea>
@@ -258,10 +276,10 @@ function Form() {
               <div className="form-button-wrapper">
                 <button
                   type="submit"
-                  className="submit-button"
+                  className="submit-button-form"
                   disabled={isSubmitting}
                 >
-                  <p>{isSubmitting ? "Sending..." : "Submit your request"}</p>
+                  <p>{isSubmitting ? "Se trimite..." : "Trimite cererea"}</p>
                 </button>
               </div>
             </form>
@@ -274,9 +292,9 @@ function Form() {
                 {submitMessage}
               </p>
             )}
-            <p className="response-note">
+            {/* <p className="response-note">
               Drop me a message, I typically respond within 24 hours
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

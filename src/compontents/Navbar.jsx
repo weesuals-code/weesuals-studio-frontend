@@ -15,16 +15,16 @@ function Navbar() {
 
       <div className="links">
         <div className="link">
-          <a href="#home">Projects</a>
+          <a href="#work">Proiecte</a>
         </div>
         <div className="link">
-          <a href="#about">About</a>
+          <a href="#about">Despre noi</a>
         </div>
         <div className="link">
-          <a href="#services">Services</a>
+          <a href="#services">Servicii</a>
         </div>
         <div className="link blue">
-          <a href="#contact">CTA</a>
+          <a href="#contact">Contact</a>
         </div>
         {/* <div className="link admin">
           <Link to="/admin/login">Admin</Link>
@@ -41,7 +41,7 @@ function Navbar() {
       {/* Mobile menu */}
       <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
         <div className="mobile-link">
-          <a href="#home">Projects</a>
+          <a href="#work">Projects</a>
         </div>
         <div className="mobile-link">
           <a href="#about">About</a>

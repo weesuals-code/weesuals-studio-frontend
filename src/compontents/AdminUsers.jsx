@@ -169,9 +169,16 @@ function AdminUsers({ admin, onLogout }) {
         <div className="admin-header-content">
           <div className="admin-info">
             <h1>Admin Users</h1>
+            <p>Autentificat ca: <strong>{admin.email}</strong></p>
             <p>Manage admin user accounts</p>
           </div>
           <div className="admin-actions">
+            <button
+              className="admin-button secondary"
+              onClick={() => navigate("/admin/verified-users")}
+            >
+              Utilizatori Verificati
+            </button>
             <button
               className="admin-button secondary"
               onClick={() => navigate("/admin/dashboard")}
@@ -191,10 +198,11 @@ function AdminUsers({ admin, onLogout }) {
             <h2>Admin Users</h2>
             <button
               className="admin-button primary"
+              style={{ padding: "7px 15px", fontSize: 15 }}
               onClick={() => setShowAddForm(!showAddForm)}
             >
-              {showAddForm ? "Cancel" : "Add User"}
-            </button>
+              <p> {showAddForm ? "Cancel" : "Add User"}
+              </p>            </button>
           </div>
 
           {error && (

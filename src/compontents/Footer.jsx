@@ -6,6 +6,8 @@ import {
   FaTiktok,
   FaInstagram,
   FaYoutube,
+  FaFacebook,
+  FaLinkedin,
 } from "react-icons/fa";
 import logo from "../assets/img/logo.png";
 
@@ -17,13 +19,13 @@ function Footer() {
           <div className="marquee-container">
             <div className="marquee-content">
               <span className="marquee-text">
-                Bring your vision to life—one frame at a time.
+                Conținut făcut cu grijă. Pentru branduri reale.
               </span>
               <span className="marquee-text">
-                Bring your vision to life—one frame at a time.
+                Conținut făcut cu grijă. Pentru branduri reale.
               </span>
               <span className="marquee-text">
-                Bring your vision to life—one frame at a time.
+                Conținut făcut cu grijă. Pentru branduri reale.
               </span>
             </div>
           </div>
@@ -33,51 +35,53 @@ function Footer() {
             <a href="./" className="logo-link">
               <img src={logo} alt="Title" className="logo-image" />
             </a>
+            <p>Partenerul tău pentru marketing și content.</p>
+
           </div>
           <div className="footer-links">
-            <h5>Quick links</h5>
-            <a href="./#:S48s0AycK" className="footer-link">
+            <h5>Pagini </h5>
+            <a href="#work" className="footer-link">
               <FaArrowRight />
-              <p>Projects</p>
+              <p>Proiecte</p>
             </a>
-            <a href="./#about" className="footer-link">
+            <a href="#about" className="footer-link">
               <FaArrowRight />
-              <p>About</p>
+              <p>Despre noi</p>
             </a>
-            <a href="./#services" className="footer-link">
+            <a href="#services" className="footer-link">
               <FaArrowRight />
-              <p>Services</p>
+              <p>Servicii</p>
             </a>
-            <a href="./#contact" className="footer-link">
+            <a href="#contact" className="footer-link">
               <FaArrowRight />
               <p>Contact</p>
             </a>
           </div>
           <div className="footer-links">
-            <h5>Reach out</h5>
+            <h5>Contact</h5>
             <a
-              href="mailto:yours@gmail.com"
+              href="mailto:weesualsstudio@gmail.com"
               target="_blank"
               rel="noopener"
               className="footer-link"
             >
               <FaEnvelope />
-              <p>yours@gmail.com</p>
+              <p>weesualsstudio@gmail.com</p>
             </a>
             <a
-              href="tel:+123 456 789"
+              href="tel:+40 741 791 013"
               target="_blank"
               rel="noopener"
               className="footer-link"
             >
               <FaPhone />
-              <p>+123 456 789</p>
+              <p>+40 741 791 013</p>
             </a>
           </div>
           <div className="footer-links">
-            <h5>My socials</h5>
+            <h5>Social media</h5>
             <a
-              href="https://www.tiktok.com/"
+              href="https://www.tiktok.com/@weesuals.studio"
               target="_blank"
               rel="noopener"
               className="footer-link"
@@ -86,7 +90,7 @@ function Footer() {
               <p>TikTok</p>
             </a>
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/weesuals.studio"
               target="_blank"
               rel="noopener"
               className="footer-link"
@@ -95,13 +99,21 @@ function Footer() {
               <p>Instagram</p>
             </a>
             <a
-              href="https://www.youtube.com/"
+              href="https://www.facebook.com/profile.php?id=61565831338527"
               target="_blank"
               rel="noopener"
               className="footer-link"
             >
-              <FaYoutube />
-              <p>Youtube</p>
+              <FaFacebook />
+              <p>Facebook</p>
+            </a> <a
+              href="https://ro.linkedin.com/company/weesuals-studio?trk=public_jobs_topcard-org-name"
+              target="_blank"
+              rel="noopener"
+              className="footer-link"
+            >
+              <FaLinkedin />
+              <p>Linkedin</p>
             </a>
           </div>
         </div>

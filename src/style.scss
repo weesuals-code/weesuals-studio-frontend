@@ -218,9 +218,10 @@ nav {
   }
 
   .title {
-    font-size: 90px;
+    font-size: 80px;
     font-family: $font_2;
     color: white;
+    text-align: center;
     font-weight: 400;
     letter-spacing: -0.06em;
     line-height: 1em;
@@ -238,8 +239,9 @@ nav {
 
   .button-wrapper {
     width: 100%;
-    max-width: 200px;
+    max-width: 400px;
     display: flex;
+    justify-content: center;
     position: relative;
 
     .button {
@@ -763,7 +765,7 @@ nav {
       .thumbnail-card {
         width: 320px;
         max-width: 100%;
-        aspect-ratio: 1.77778;
+        // aspect-ratio: 1.77778;
         border-radius: 12px;
         overflow: hidden;
         flex-shrink: 0;
@@ -2046,7 +2048,7 @@ nav {
     flex: 0 0 auto;
     flex-flow: column;
     height: 212.812px;
-    max-width: 620px;
+    // max-width: 620px;
     overflow: visible;
     position: relative;
   }
@@ -2129,7 +2131,7 @@ nav {
     height: 172.812px;
     overflow-wrap: break-word;
     white-space: pre-wrap;
-    max-width: 620px;
+    // max-width: 620px;
     word-break: break-word;
     transform: none;
   }
@@ -2332,7 +2334,7 @@ nav {
     color: rgb(255, 255, 255);
     font-family: Lora, "Lora Placeholder", serif;
     font-feature-settings: normal;
-    font-size: 70px;
+    font-size: 55px;
     text-align: center;
     font-variation-settings: normal;
     font-weight: 400;
@@ -3587,7 +3589,7 @@ nav {
     background: rgba(255, 255, 255, 0.1);
     padding: 8px 20px;
     border-radius: 20px;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
     font-size: 14px;
     color: white;
   }
@@ -4624,7 +4626,7 @@ nav {
       display: flex;
       flex: 0 0 auto;
       flex-flow: column;
-      max-width: 620px;
+      max-width: 800px;
       overflow: visible;
       position: relative;
       width: 100%;
@@ -5041,7 +5043,7 @@ nav {
       width: 193.594px;
     }
 
-    .submit-button {
+    .submit-button-form {
       box-sizing: border-box;
       background: $blue;
       padding: 0px 24px;
@@ -5060,7 +5062,7 @@ nav {
       border: none;
     }
 
-    .submit-button p {
+    .submit-button-form p {
       box-sizing: border-box;
       margin: 0px;
       color: rgb(255, 255, 255);
@@ -5124,7 +5126,7 @@ nav {
       grid-template-columns: 48% 48%;
     }
 
-    .submit-button {
+    .submit-button-form {
       width: 160px;
       height: 44px;
     }
@@ -5174,7 +5176,7 @@ nav {
       min-height: 90px;
     }
 
-    .submit-button {
+    .submit-button-form {
       width: 100%;
       height: 46px;
     }
@@ -5336,7 +5338,7 @@ nav {
       height: 40px;
     }
 
-    .submit-button {
+    .submit-button-form {
       width: 100%;
       height: 40px;
       font-size: 14px;
@@ -5486,7 +5488,6 @@ nav {
 
   .logo-wrapper {
     box-sizing: border-box;
-    place-content: center flex-start;
     align-items: center;
     place-self: start;
     gap: 10px;
@@ -5499,12 +5500,19 @@ nav {
     position: relative;
     width: 100%;
     opacity: 1;
+    flex-direction: column;
+
+    p{
+      text-align: left;
+    font-weight: 600;
+      color:white;
+      font-size: 20px;
+    }
   }
 
   .logo-link {
     box-sizing: border-box;
     display: flex;
-    place-content: center;
     align-items: center;
     gap: 8px;
     flex-flow: row;
@@ -5515,6 +5523,7 @@ nav {
     width: 100%;
     border-radius: 12px;
     opacity: 1;
+    justify-content: flex-start;
   }
 
   .logo-image {
