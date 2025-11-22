@@ -111,11 +111,6 @@ const PhoneVerificationModal = ({
             videosPerWeek,
             postsPerWeek,
             includeAdManagement,
-            videoCost: videoPricing[videosPerWeek],
-            postCost: postPricing[postsPerWeek],
-            adCost: includeAdManagement ? (videosPerWeek * videoPricing[videosPerWeek] + postsPerWeek * postPricing[postsPerWeek] >= 4000 ? 0 : adManagementPrice) : 0,
-            totalPrice: videosPerWeek * videoPricing[videosPerWeek] + postsPerWeek * postPricing[postsPerWeek] + 
-                      (includeAdManagement ? (videosPerWeek * videoPricing[videosPerWeek] + postsPerWeek * postPricing[postsPerWeek] >= 4000 ? 0 : adManagementPrice) : 0),
             requestedAt: new Date().toISOString(),
             sessionId: getOrCreateSessionId() // Include session ID in the user data
           }
@@ -311,8 +306,8 @@ const PhoneVerificationModal = ({
           <div className="verification-step success-message">
             <h2>Prețul tău personalizat</h2>
             <div className="price-display">
-              <span className="price">{price} €</span>
-              <span className="price-note">pe lună</span>
+              <span className="price">{price} RON</span>
+              {/* <span className="price-note">pe lună</span> */}
             </div>
             <p>Mulțumim că ai verificat numărul de telefon!</p>
             <div className="success-actions">

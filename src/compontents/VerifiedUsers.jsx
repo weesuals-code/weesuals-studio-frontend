@@ -1,6 +1,48 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import "../AdminDashboard.scss";
+
+// Price configuration - must match backend
+const videoPricing = {
+  1: 1500,
+  2: 2200,
+  3: 3000,
+  4: 4000,
+  5: 4600,
+  6: 5000,
+  7: 5400
+};
+
+const postPricing = {
+  1: 500,
+  2: 900,
+  3: 1200,
+  4: 1400,
+  5: 1600,
+  6: 1800,
+  7: 2000
+};
+
+const AD_MANAGEMENT_PRICE = 600;
+
+// Calculate price function - matches backend logic
+const calculatePrice = (videosPerWeek, postsPerWeek, includeAdManagement) => {
+  const videoCost = videoPricing[videosPerWeek] || 0;
+  const postCost = postPricing[postsPerWeek] || 0;
+  const basePrice = videoCost + postCost;
+  
+  // Ad management is free if base price is 4000 RON or more
+  const adCost = includeAdManagement ? (basePrice >= 4000 ? 0 : AD_MANAGEMENT_PRICE) : 0;
+  const totalPrice = basePrice + adCost;
+  
+  return {
+    videoCost,
+    postCost,
+    basePrice,
+    adCost,
+    totalPrice
+  };
+};
 
 function VerifiedUsers({ admin, onLogout }) {
   const [verifiedUsers, setVerifiedUsers] = useState([]);
@@ -51,12 +93,22 @@ function VerifiedUsers({ admin, onLogout }) {
     }
   };
 
-  const formatDate = (timestamp) => {
-    if (!timestamp) return "N/A";
-    if (timestamp._seconds) {
-      return new Date(timestamp._seconds * 1000).toLocaleString("ro-RO");
+  const formatDate = (date) => {
+    if (!date) return 'N/A';
+    
+    // Handle Firestore timestamp
+    if (date.seconds) {
+      return new Date(date.seconds * 1000).toLocaleString('ro-RO');
     }
-    return new Date(timestamp).toLocaleString("ro-RO");
+    
+    // Handle Firestore timestamp with _seconds (legacy format)
+    if (date._seconds) {
+      return new Date(date._seconds * 1000).toLocaleString('ro-RO');
+    }
+    
+    // Handle Date object or ISO string
+    const parsedDate = new Date(date);
+    return isNaN(parsedDate.getTime()) ? 'N/A' : parsedDate.toLocaleString('ro-RO');
   };
 
   const formatCurrency = (amount) => {
@@ -160,12 +212,9 @@ function VerifiedUsers({ admin, onLogout }) {
                 <thead>
                   <tr>
                     <th>Număr Telefon</th>
-                    <th>Cost Anunț</th>
+                    <th>Videoclipuri/săptămână</th>
+                    <th>Postări/săptămână</th>
                     <th>Management Anunțuri</th>
-                    <th>Cost Postare</th>
-                    <th>Postări/Săptămână</th>
-                    <th>Cost Video</th>
-                    <th>Video-uri/Săptămână</th>
                     <th>Preț Total</th>
                     <th>Data Cererii</th>
                   </tr>
@@ -175,13 +224,17 @@ function VerifiedUsers({ admin, onLogout }) {
                     verifiedUsers.map((user, index) => (
                       <tr key={user.phoneNumber || index}>
                         <td><a style={{color:"#f38a1e"}} href={`tel:${user.phoneNumber}`}>{user.phoneNumber || 'N/A'}</a></td>
-                        <td>{formatCurrency(user.adCost)}</td>
+                        <td>{user.videosPerWeek || 'N/A'}</td>
+                        <td>{user.postsPerWeek || 'N/A'}</td>
                         <td>{user.includeAdManagement ? 'Da' : 'Nu'}</td>
-                        <td>{formatCurrency(user.postCost)}</td>
-                        <td>{user.postsPerWeek || '0'}</td>
-                        <td>{formatCurrency(user.videoCost)}</td>
-                        <td>{user.videosPerWeek || '0'}</td>
-                        <td>{formatCurrency(user.totalPrice)}</td>
+                        <td>{
+                          user.videosPerWeek && user.postsPerWeek ? 
+                          calculatePrice(
+                            user.videosPerWeek, 
+                            user.postsPerWeek, 
+                            user.includeAdManagement
+                          ).totalPrice + ' RON' : 'N/A' 
+                        }</td>
                         <td>{formatDate(user.requestedAt)}</td>
                       </tr>
                     ))

@@ -22,7 +22,7 @@ function Home() {
 </p>
         <div className="button-wrapper">
           <button className="button main">
-            <a href="/#sad">
+            <a href="/#contact">
               Hai să lucrăm împreună <FaRegArrowAltCircleRight />
             </a>
           </button>

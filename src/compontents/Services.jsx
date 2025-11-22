@@ -12,7 +12,7 @@ function Services() {
         <div className="best">
           <p>01</p>
           <img
-            src="https://framerusercontent.com/images/wjS0gBIEcgDgMg7kfh0BlkJWUI.jpg?scale-down-to=2048&width=5184&height=3456"
+            src={require("../assets/img/pexels-judit-peter-281675-1766604.webp")}
             alt=""
           />
           <div className="content">
@@ -39,7 +39,7 @@ function Services() {
         <div className="best">
           <p>02</p>
           <img
-            src="https://framerusercontent.com/images/FeANZZDwFn5J3I7mtnEtxNQ9fM.png"
+            src={require("../assets/img/pexels-pixabay-267350.webp")}
             alt=""
           />
           <div className="content">
@@ -50,7 +50,7 @@ function Services() {
             <div className="tags">
               <div className="tag">
                 <div className="spot"></div>
-                 Creare și lansare reclame
+                Creare și lansare reclame
               </div>
               <div className="tag">
                 <div className="spot"></div>
@@ -66,8 +66,8 @@ function Services() {
         <div className="best c">
           <p>03</p>
           <img
-            src="https://framerusercontent.com/images/wjS0gBIEcgDgMg7kfh0BlkJWUI.jpg?scale-down-to=2048&width=5184&height=3456"
-            alt=""
+                       src={require("../assets/img/pexels-cottonbro-6986455.webp")}
+ alt=""
           />
           <div className="content">
             <h2 className="subtitle">Google Ads</h2>
@@ -94,8 +94,8 @@ function Services() {
         <div className="best">
           <p>04</p>
           <img
-            src="https://framerusercontent.com/images/FeANZZDwFn5J3I7mtnEtxNQ9fM.png"
-            alt=""
+                       src={require("../assets/img/pexels-kevin-ku-92347-577585 (1).webp")}
+ alt=""
           />
           <div className="content">
             <h2 className="subtitle">Website de prezentare</h2>
@@ -119,11 +119,11 @@ function Services() {
             </div>
           </div>
         </div>
-       
+
       </div>
       <div className="button-wrapper">
         <button className="button main">
-          <a href="/#sad">
+          <a href="/#contact">
             Hai să lucrăm împreună <FaRegArrowAltCircleRight />
           </a>
         </button>

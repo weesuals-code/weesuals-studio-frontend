@@ -100,28 +100,56 @@ function Work() {
     secondary:
       "https://framerusercontent.com/images/5T3js1ouRyIKgpPoNrHSvh0aE.png?width=1200&height=1200",
   };
-  const aboutTools = [
+const aboutTools = [
     {
-      src: "https://framerusercontent.com/images/NNQGmaj3ZIC78sIAPo2iLipwQ.png?width=2101&height=2049",
+      src: "https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg",
       alt: "Adobe Premiere Pro logo",
     },
     {
-      src: "https://framerusercontent.com/images/qktZqlilMGc0kxLxe4rGqvdwE.png?width=512&height=500",
+      src: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg",
       alt: "Adobe After Effects logo",
     },
-    {
-      src: "https://framerusercontent.com/images/o1hqKckXTzMM6YQzhXA5v20lUU.png?width=1200&height=1200",
+  {
+      // Folosim un PNG transparent direct, SVG-ul DaVinci face probleme des
+      src: "https://upload.wikimedia.org/wikipedia/commons/4/4d/DaVinci_Resolve_Studio.png",
       alt: "DaVinci Resolve logo",
     },
     {
-      src: "https://framerusercontent.com/images/XYhwhxXuEi3N5tgsUyxCU8Rmd6g.png?width=320&height=320",
+      src: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg",
       alt: "Notion logo",
     },
+   
+
+
+
     {
-      src:"https://www.svgrepo.com/svg/515420/capcut?",
-      alt:"Sad"
-    }
-  ];
+      src: "https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg",
+      alt: "Adobe Photoshop logo"
+    },
+    {
+      src: "https://upload.wikimedia.org/wikipedia/commons/5/56/Adobe_Photoshop_Lightroom_Classic_CC_icon.svg",
+      alt: "Adobe Lightroom logo"
+    },
+    {
+      src: "https://cdn.simpleicons.org/mailchimp",
+      alt: "Mailchimp logo"
+    },
+    
+{
+  src: "https://cdn.brandfetch.io/idlz8Uc70L/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1756467802185",
+  alt: "Metricool logo"
+},
+{
+  src: "https://studio-culture.com.au/wp-content/uploads/2020/10/klaviyo-logo.png",
+  alt: "Klaviyo logo"
+},
+{
+  src: "https://cdn.brandfetch.io/idUmqKFgE3/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1743997736787",
+  alt: "CapCut logo"
+},
+
+   
+];
 
   return (
     <>
@@ -132,11 +160,11 @@ function Work() {
             className="top"
             alt="Freelancer in a conference call"
           />
-          <img
+          {/* <img
             src={aboutImages.secondary}
             className="bot"
             alt="Creator working at desk"
-          />
+          /> */}
           <div className="about-header">
             <div className="how-tag">
               <div className="how-dot"></div>
@@ -157,13 +185,13 @@ function Work() {
                 ))}
               </div>
               <a className="about-cta" href="/#contact">
-                <span>Hire me</span>
+                <span>Hai să lucrăm împreună </span>
                 <FaRegArrowAltCircleRight />
               </a>
             </div>
           </div>
           <div className="about-tools">
-            <h3 className="about-tools-title">Tools I use</h3>
+            <h3 className="about-tools-title">Instrumentele pe care le folosim</h3>
             <div className="about-tools-grid">
               {aboutTools.map((tool) => (
                 <div className="about-tool-card" key={tool.src}>
@@ -258,7 +286,7 @@ function Work() {
         </div>
         <div className="button-wrapper">
           <button className="button main">
-            <a href="/#sad">
+            <a href="/#contact">
               See all my works <FaRegArrowAltCircleRight />
             </a>
           </button>

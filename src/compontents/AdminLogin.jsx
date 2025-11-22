@@ -51,15 +51,9 @@ function AdminLogin({ onLogin }) {
 
   return (
     <div className="admin-login">
-      <div className="admin-login-container">
+      <div className="admin-login-container" style={{background:"#023123"}}>
         <div className="contact-header">
-          <div className="section-tag">
-            <div className="section-tag-inner">
-              <div className="dot" />
-              <p>Admin</p>
-            </div>
-          </div>
-          <h2 className="contact-title">Admin Access</h2>
+          <h2 className="contact-title" style={{color:"white"}}>Admin Access</h2>
         </div>
 
         <form className="contact-form" onSubmit={handleSubmit}>
